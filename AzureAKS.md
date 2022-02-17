@@ -9,12 +9,15 @@ brew update && brew install azure-cli
 ```
 Ref: Install Azure CLI https://docs.microsoft.com/en-us/cli/azure/install-azure-cli 
 
-## login 
+## Login with Azure cli
 ```
 az login
 ```
-
-## create cluster
+## Create Azure Resource Group if doesn't exist
+```
+az group create --location eastus -n anton-rg
+```
+## Create AKS cluster
 ```
 az aks create -g anton-rg --location eastus \
   --name anton-aks-rec --node-count 3 \
@@ -24,11 +27,11 @@ Ref: az aks create documentation https://docs.microsoft.com/en-us/cli/azure/aks?
 
 Ref: VM types/sizes: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes
 
-## add cluster credentials to kubectl
+## Add cluster credentials to kubectl
 ```
 az aks get-credentials -g anton-rg  --name anton-aks-rec
 ```
-## delete cluster
+## Delete cluster
 ```
 az aks delete -g anton-rg --name anton-aks-rec
 ```

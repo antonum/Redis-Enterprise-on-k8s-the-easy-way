@@ -6,12 +6,12 @@ Setup time ~ 7 minutes
 
 Ref: https://cloud.google.com/sdk/docs/install
 
-## login 
+## Login with gcloud
 ```
 gcloud init
 ```
 
-## create cluster
+## Create GKE cluster
 ```
 gcloud container clusters create my-redis-cluster \
   --num-nodes 3 --machine-type e2-standard-4
@@ -20,11 +20,11 @@ Ref: gcloud container clusters create documentation https://cloud.google.com/sdk
 
 Ref: VM types/sizes: https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard recommended node size - at least 4 cores/16GB RAM
 
-## add cluster credentials to kubectl
+## Add cluster credentials to kubectl
 
 `gcloud container clusters create` automatically adds newly created cluster credentials as the default context upon creation. No additional actions needed.
 
-## delete cluster
+## Delete cluster
 ```
 gcloud container clusters delete my-redis-cluster 
 ```

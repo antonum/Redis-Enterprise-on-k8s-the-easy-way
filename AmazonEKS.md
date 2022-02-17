@@ -9,15 +9,16 @@ brew tap weaveworks/tap
 brew install weaveworks/tap/eksctl
 ```
 Ref: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
 Ref: https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html
 
 ## Configure aws cli credentials 
 
-You'll need a programmatic credentials (Key/Secret) with appropriate priveledges.
+You'll need the programmatic credentials (Key/Secret) with the appropriate priveledges.
 
 Ref: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
 
-## create cluster
+## Create EKS cluster
 ```bash
 eksctl create cluster \
 --name anton-cluster \
@@ -32,11 +33,11 @@ Ref: `eksctl create cluster` documentation https://eksctl.io/usage/creating-and-
 
 Ref: VM types/sizes: https://aws.amazon.com/ec2/instance-types/ recommended node size - at least 4 cores/16GB RAM (m5.xlarge+)
 
-## add cluster credentials to kubectl
+## Add cluster credentials to kubectl
 
 `eksctl create cluster` automatically adds newly created cluster credentials as the default context upon creation. No additional actions needed.
 
-## delete cluster
+## Delete cluster
 ```
 eksctl delete cluster \
 --name anton-cluster \
