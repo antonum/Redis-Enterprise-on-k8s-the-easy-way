@@ -41,9 +41,7 @@ Ref: VM types/sizes: https://aws.amazon.com/ec2/instance-types/ recommended node
 ```
 eksctl delete cluster \
 --name anton-cluster \
---region us-east-2 \
---profile redis
-
+--region us-east-2 
 ```
 
 ## Clear up kubectl context
